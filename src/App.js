@@ -1,11 +1,22 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Box } from '@mui/material'
 
+import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed } from './components'
 
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <BrowserRouter>
+      <Box sx={{ backgroundColor: '#000' }}>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Feed />} />
+          <Route path="/video/:id" element={<VideoDetail />} />
+          <Route path="/channel/:id" element={<ChannelDetail />} />
+          <Route path="/search/:searhTerm" element={<SearchFeed />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
   )
 }
 

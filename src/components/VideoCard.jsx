@@ -6,7 +6,6 @@ import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoCha
 
 const VideoCard = ({ video }) => {
   const { id: { videoId }, snippet } = video
-  console.log(snippet)
 
   return (
     <Card sx={{
